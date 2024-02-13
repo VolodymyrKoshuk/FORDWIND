@@ -5,8 +5,6 @@ variable "terr_region" {
   default     = "eu-north-1"
 }
 
-# Varibles for vpc.tf file
-
 # Variables for vpc
 variable "vpc_name" {
   description = "Name of VPC"
@@ -136,4 +134,19 @@ variable "nat_tags_of_vpc" {
   default = {
     Name = "NAT_Fordwind"
   }
+}
+
+
+#Variables for EKS module
+
+variable "eks_cluster_name" {
+  description = "Name of eks cluster"
+  type        = string
+  default     = "Fordwind_cluster"
+}
+
+variable "cluster_version" {
+  description = "Version of kubernetes cluster"
+  type        = string
+  default     = "1.29"
 }
