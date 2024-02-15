@@ -1,3 +1,10 @@
+# Data Source
+
+data "aws_availability_zones" "available" {
+  state = "available"
+  
+}
+
 # VPC
 
 module "vpc_fordwind" {
@@ -9,7 +16,7 @@ module "vpc_fordwind" {
   create_igw = var.igw_vpc
 
   # Configuration of AZ and Subnet of vpc
-  azs                  = var.azs_vpc
+  azs                  = data.aws_availability_zones.available.names
   public_subnet_names  = var.public_subnet_name
   public_subnets       = var.cidr_public_subnet
   private_subnet_names = var.private_subnet_name

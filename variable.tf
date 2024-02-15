@@ -25,12 +25,7 @@ variable "igw_vpc" {
 }
 
 
-# Configuration of AZ and Subnet of vpc
-variable "azs_vpc" {
-  description = "Availability Zones where the VPC will be according to region"
-  type        = list(string)
-  default     = ["eu-north-1a", "eu-north-1b", "eu-north-1c"]
-}
+# Configuration of Subnet of vpc
 
 variable "public_subnet_name" {
   description = "Name of public subnet"
